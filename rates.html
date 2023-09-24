@@ -16,6 +16,12 @@
     <!-- css -->
     <link rel="stylesheet" href="css/style.css" />
 
+    <!-- notyf -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+    />
+
     <!-- icon -->
     <link rel="icon" href="assets/img/icon.png" type="image/x-icon" />
 
@@ -63,45 +69,44 @@
           </div>
         </section>
 
-        <aside id="wellrates" class="bgimgrates" >
-          <div  class="container h-100">
+        <aside id="wellrates" class="bgimgrates">
+          <div class="container h-100">
             <div class="row h-100">
               <div class="col-md-4">
                 <div class="hero-content">
                   <div>
-                  <form style="margin-top: 300px;">
-                    <input
-                      type="text"
-                      id="Origin City"
-                      name="fav_language"
-                      placeholder="Origin City"
-                    />
-                    <label for="html"></label> 
-                    <br>
+                    <form style="margin-top: 300px" id="formRates">
+                      <input
+                        type="text"
+                        id="OCity"
+                        name="fav_language"
+                        placeholder="Origin City"
+                      />
+                      <label for="html"></label>
+                      <br />
 
-                    <input
-                      type="text"
-                      id="Destination City"
-                      name="fav_language"
-                      placeholder="Destination City"
-                    />
-                    <label for="html"></label> 
-                    <br>
-                    
-                    <input
-                      type="number"
-                      id="Berat Paket Kg"
-                      name="fav_language"
-                      placeholder="Berat Paket Kg"
-                    />
-                    <label for="html"></label>
-                    <br>
-                    <br>
+                      <input
+                        type="text"
+                        id="DCity"
+                        name="fav_language"
+                        placeholder="Destination City"
+                      />
+                      <label for="html"></label>
+                      <br />
 
+                      <input
+                        type="number"
+                        id="WPack"
+                        name="fav_language"
+                        placeholder="Weight /kg"
+                      />
+                      <label for="html"></label>
+                      <br />
+                      <br />
 
-                    <input class="Formsub" type="submit" value="Check" />
-                  </form>
-                </div>
+                      <input class="Formsub" type="submit" value="Check" />
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>
@@ -130,5 +135,8 @@
         <li><img src="assets/img/sosmed/4.png" alt="" width="20px" /></li>
       </ul>
     </div>
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="js/rates.js"></script>
   </body>
 </html>

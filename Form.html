@@ -26,7 +26,7 @@
     <header>
       <nav class="navbar">
         <div class="container">
-          <a href="#">
+          <a href="index.html">
             <img
               src="assets/img/Fast Log.png"
               alt="Fast Logistic"
@@ -57,76 +57,93 @@
                 <div class="hero-content">
                   <div>
                     <div>
-                    <form style="margin-top: 300px">
+                    <form 
+                    id="ekspedisiForm">
                       <h1 class="texth1">Form Request Shipp</h1>
                       <div class="ship">
+                      
+                      <div>
+                      <label for="ReceiversName"></label>
                       <input
                         type="text"
-                        id="Receiver's Name"
-                        name="fav_language"
+                        id="ReceiversName"
+                        name="ReceiversName"
                         placeholder="Receiver's Name"
                         style="
                         padding: 10px 250px;
                         text-align: center;
                         "
                       />
-                      <label for="html"></label>
+                      </div>
                       <br />
                       <br />
 
+                      <div>
+                      <label for="TrackingNumber"></label>
                       <input
                         type="text"
-                        id="Tracking Number"
-                        name="fav_language"
+                        id="TrackingNumber"
+                        name="TrackingNumber"
                         placeholder="Tracking Number"
                         style="
                         padding: 10px 250px;
                         text-align: center;
                         "
                       />
-                      <label for="html"></label>
+                    </div>
                       <br />
                       <br />
 
+                      <div>
+                      <label for="PhoneNumber"></label>
                       <input
                         type="tel"
-                        id="Phone Number"
-                        name="fav_language"
+                        id="PhoneNumber"
+                        name="PhoneNumber"
                         placeholder="Phone Number"
                         style="
                         padding: 10px 250px;
                         text-align: center;
                         "
                       />
-                      <label for="html"></label>
+                      </div>
                       <br />
                       <br />
 
+                      <div>
+                      <label for="PackageWeight"></label>
                       <input
                         type="number"
-                        id="Package Weight"
-                        name="fav_language"
+                        id="PackageWeight"
+                        name="PackageWeight"
                         placeholder="Package Weight (KG)"
                         style="
                         padding: 10px 250px;
                         text-align: center;
                         "
                       />
-                      <label for="html"></label>
+                    </div>
                       <br />
                       <br />
                       
-                      <label for="Service Option">Service Option</label>
-                      <select id="country" name="country">
+                      <div>
+                      <label for="ServiceOption">Service Option</label>
+                      <select id="ServiceOption" name="ServiceOption">
                         <option value="Air Expedition">Air Expedition</option>
                         <option value="Sea Expedition">Sea Expedition</option>
                         <option value="Land Expedition">Land Expedition</option>
                       </select>
+                    </div>
                       <br />
                       <br />
 
-                      <input class="Submitshipp" type="submit" value="Submit" />
-                    </div>
+                      <!-- <input class="Submitshipp" type="submit" value="Submit" /> -->
+                      <!-- <input class="Submitshipp" type="button" id="klik" value="Submit" />
+                      <input class="Submitshipp" type="button" id="remove" value="Clear" /> -->
+                      <button class="Submitshipp" type="button" id="addEkspedisi">Add Expedition</button>
+                      <button class="Submitshipp" type="button" id="clearEkspedisi">Clear All</button>
+                      <div id="daftarEkspedisi"></div>
+                      </div>
                     </form>
                   </div>
                 </div>
@@ -157,5 +174,6 @@
         <li><img src="assets/img/sosmed/4.png" alt="" width="20px" /></li>
       </ul>
     </div>
+    <script src="js/main.js"></script>
   </body>
 </html>

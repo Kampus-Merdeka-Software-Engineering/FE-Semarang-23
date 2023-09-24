@@ -19,6 +19,9 @@
     <!-- icon -->
     <link rel="icon" href="assets/img/icon.png" type="image/x-icon" />
 
+    <!-- notfy -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
+
     <title>Fast Logistic</title>
   </head>
   <body>
@@ -74,10 +77,10 @@
                 <div class="hero-content">
                   <div>
                     <div>
-                    <form style="margin-top: 300px">
+                    <form style="margin-top: 300px"  id="formContact">
                       <input
                         type="text"
-                        id="Full Name"
+                        id="fullname"
                         name="fav_language"
                         placeholder="Full Name"
                       />
@@ -87,7 +90,7 @@
 
                       <input
                         type="email"
-                        id="Email"
+                        id="email"
                         name="fav_language"
                         placeholder="Email"
                       />
@@ -97,7 +100,7 @@
 
                       <input
                         type="tel"
-                        id="Phone Number"
+                        id="phoneNumber"
                         name="fav_language"
                         placeholder="Phone Number"
                       />
@@ -107,7 +110,7 @@
 
                       <input
                         type="text"
-                        id="Subject"
+                        id="subject"
                         name="fav_language"
                         placeholder="Subject"
                       />
@@ -115,12 +118,7 @@
                       <br />
                       <br />
 
-                      <input
-                        type="text"
-                        id="Send Message"
-                        name="fav_language"
-                        placeholder="Send Message"
-                      />
+                      <textarea id="sendMessage" placeholder="Send Message" cols="30" rows="6"></textarea>
                       <label for="html"></label>
                       <br />
                       <br />
@@ -156,5 +154,9 @@
         <li><img src="assets/img/sosmed/4.png" alt="" width="20px" /></li>
       </ul>
     </div>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="js/contact.js"></script>
   </body>
 </html>
