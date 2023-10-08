@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000/api/users'; // diganti sesuai dengan URL server 
+const baseURL = 'https://be-semarang-23-production.up.railway.app/users'; // diganti sesuai dengan URL server 
 
 document.addEventListener("DOMContentLoaded", function () {
   const ekspedisiForm = document.getElementById("ekspedisiForm");
