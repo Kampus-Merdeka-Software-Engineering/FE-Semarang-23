@@ -102,7 +102,4 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Error fetching data:", error);
     }
   });
-
-  // Tambahkan event listener untuk mengupdate ekspedisi (gunakan metode PUT) jika diperlukan
-  // ...
 });
