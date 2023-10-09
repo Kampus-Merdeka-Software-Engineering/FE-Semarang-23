@@ -1,4 +1,4 @@
-const baseURL = 'https://be-semarang-23-production.up.railway.app/users';
+const baseURL = 'https://be-semarang-23-production.up.railway.app/api/users';
 
 document.addEventListener("DOMContentLoaded", function () {
   const ekspedisiForm = document.getElementById("ekspedisiForm");
