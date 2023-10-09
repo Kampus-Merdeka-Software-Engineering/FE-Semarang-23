@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
           daftarEkspedisi.appendChild(ekspedisiItem);
 
           try {
-            const response = await fetch(baseURL + '/' + daftarEkspedisi, {
+            const response = await fetch(baseURL + '/' , {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
