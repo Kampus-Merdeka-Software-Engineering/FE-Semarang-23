@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({requestData}),
+          body: JSON.stringify(requestData),
         });
 
         if (response.ok) {
