@@ -1,4 +1,4 @@
-const baseURL = 'https://be-semarang-23-production.up.railway.app/api/users/:ReceiversName';
+const baseURL = 'https://be-semarang-23-production.up.railway.app/api/users/';
 
 
 document.addEventListener("DOMContentLoaded", function () {
