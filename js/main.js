@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (ReceiversName && TrackingNumber && PhoneNumber && PackageWeight && ServiceOption) {
       try {
-        // Buat objek JSON dengan kunci yang benar
+        // Buat objek JSON dengan kunci 
         const requestData = {
           ReceiversName: ReceiversName,
           TrackingNumber: TrackingNumber,
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(requestData),
+          body: JSON.stringify({requestData}),
         });
 
         if (response.ok) {
