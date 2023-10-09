@@ -1,118 +1,108 @@
-const baseURL = 'https://be-semarang-23-production.up.railway.app/users'; // diganti sesuai dengan URL server 
+const baseURL = 'https://be-semarang-23-production.up.railway.app/users';
 
 document.addEventListener("DOMContentLoaded", function () {
   const ekspedisiForm = document.getElementById("ekspedisiForm");
   const daftarEkspedisi = document.getElementById("daftarEkspedisi");
   const addEkspedisi = document.getElementById("addEkspedisi");
   const clearEkspedisiButton = document.getElementById("clearEkspedisi");
+  const output = document.getElementById("output"); // Tambahkan elemen HTML output
 
   addEkspedisi.addEventListener("click", async () => {
-      const ReceiversName = document.getElementById("ReceiversName").value;
-      const TrackingNumber = document.getElementById("TrackingNumber").value;
-      const PhoneNumber = document.getElementById("PhoneNumber").value;
-      const PackageWeight = document.getElementById("PackageWeight").value;
-      const ServiceOption = document.getElementById("ServiceOption").value;
+    const ReceiversName = document.getElementById("ReceiversName").value;
+    const TrackingNumber = document.getElementById("TrackingNumber").value;
+    const PhoneNumber = document.getElementById("PhoneNumber").value;
+    const PackageWeight = document.getElementById("PackageWeight").value;
+    const ServiceOption = document.getElementById("ServiceOption").value;
 
-      if (ReceiversName && TrackingNumber && PhoneNumber && PackageWeight && ServiceOption) {
+    if (ReceiversName && TrackingNumber && PhoneNumber && PackageWeight && ServiceOption) {
+      try {
+        // Buat objek JSON dengan kunci yang benar
+        const requestData = {
+          ReceiversName: ReceiversName,
+          TrackingNumber: TrackingNumber,
+          PhoneNumber: PhoneNumber,
+          PackageWeight: PackageWeight,
+          ServiceOption: ServiceOption
+        };
+
+        // Kirim data sebagai objek JSON
+        const response = await fetch(baseURL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestData),
+        });
+
+        if (response.ok) {
+          console.log("Added ekspedisi item successfully");
+
+          // Tampilkan informasi ekspedisi yang berhasil ditambahkan ke daftar
           const ekspedisiItem = document.createElement("div");
           ekspedisiItem.innerHTML = `<p>Receivers Name: ${ReceiversName} <br /> 
-          Tracking Number: ${TrackingNumber} <br />
-          Phone Number: ${PhoneNumber} <br />
-          Package Weight: ${PackageWeight} <br />
-          Service Option: ${ServiceOption} <br />
+            Tracking Number: ${TrackingNumber} <br />
+            Phone Number: ${PhoneNumber} <br />
+            Package Weight: ${PackageWeight} <br />
+            Service Option: ${ServiceOption} <br />
           </p>
           <h1>Success</h1>`;
-          // <button class="hapusEkspedisi">Remove</button>
           daftarEkspedisi.appendChild(ekspedisiItem);
-
-          try {
-            const response = await fetch(baseURL + '/' , {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ReceiversName, TrackingNumber, PhoneNumber, PackageWeight, ServiceOption}),
-            });
-      
-            if (response.ok) {
-              console.log("Added ekspedisi item successfully");
-            } else {
-              console.error("Failed to add ekspedisi item");
-            }
-          } catch (error) {
-            console.error("Error adding ekspedisi item:", error);
-          }
-
-          const response = await fetch(baseURL + '/' + ReceiversName, TrackingNumber, PhoneNumber, PackageWeight, ServiceOption, {
-            method: "GET",
-          });
-            const result = await response.json();
-            output.innerHTML = JSON.stringify(result);
-
-          try {
-            const response = await fetch(baseURL, {
-              method: "GET",
-          });
-            
-            if (response.ok) {
-              const result = await response.json();
-              console.log("GET Request Result:", result);
-            } else {
-              console.error("Failed to fetch data");
-            }
-          } catch (error) {
-            console.error("Error fetching data:", error);
-          }
-          
-          try {
-            const response = await fetch(baseURL, {
-              method: "PUT",
-              headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ ReceiversName, TrackingNumber, PhoneNumber, PackageWeight, ServiceOption }),
-            });
-            if (response.ok) {
-              console.log("Updated ekspedisi item successfully");
-            } else {
-              console.error("Failed to update ekspedisi item");
-            }  
-          } catch (error) {
-            console.error("Error updating ekspedisi item:", error);
-          }
-
-          try {
-            const response = await fetch(baseURL, {
-              method: "DELETE",
-            });
-          
-            if (response.ok) {
-              console.log("Deleted ekspedisi item successfully");
-            } else {
-              console.error("Failed to delete ekspedisi item");
-            }
-          } catch (error) {
-            console.error("Error deleting ekspedisi item:", error);
-          }
-
-          
-
-          // const hapusButtons = document.querySelectorAll(".hapusEkspedisi");
-          // hapusButtons.forEach(function (button) {
-          //     button.addEventListener("click", function () {
-          //         this.parentElement.remove();
-          //     });
-          // });
 
           // Reset input fields
           ekspedisiForm.reset();
+        } else {
+          console.error("Failed to add ekspedisi item");
+        }
+      } catch (error) {
+        console.error("Error adding ekspedisi item:", error);
       }
+    }
   });
 
-  clearEkspedisiButton.addEventListener("click", function () {
-      // Hapus semua elemen anak di dalam daftarEkspedisi
-      while (daftarEkspedisi.firstChild) {
-          daftarEkspedisi.removeChild(daftarEkspedisi.firstChild);
+  clearEkspedisiButton.addEventListener("click", async () => {
+    // Hapus semua elemen anak di dalam daftarEkspedisi
+    while (daftarEkspedisi.firstChild) {
+      daftarEkspedisi.removeChild(daftarEkspedisi.firstChild);
+    }
+
+    try {
+      // Kirim permintaan DELETE untuk menghapus semua ekspedisi
+      const response = await fetch(baseURL, {
+        method: "DELETE",
+      });
+
+      if (response.ok) {
+        console.log("Deleted all ekspedisi items successfully");
+      } else {
+        console.error("Failed to delete all ekspedisi items");
       }
+    } catch (error) {
+      console.error("Error deleting all ekspedisi items:", error);
+    }
   });
+
+  // Tambahkan event listener untuk mengambil data ekspedisi saat dokumen dimuat
+  document.addEventListener("DOMContentLoaded", async () => {
+    try {
+      // Kirim permintaan GET untuk mengambil data ekspedisi
+      const response = await fetch(baseURL, {
+        method: "GET",
+      });
+
+      if (response.ok) {
+        const ekspedisiData = await response.json();
+        console.log("GET Request Result:", ekspedisiData);
+
+        // Tampilkan data ekspedisi di daftarEkspedisi (jika diperlukan)
+        // ...
+      } else {
+        console.error("Failed to fetch data");
+      }
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  });
+
+  // Tambahkan event listener untuk mengupdate ekspedisi (gunakan metode PUT) jika diperlukan
+  // ...
 });
