@@ -1,9 +1,9 @@
-const baseURL = 'https://be-semarang-23-production.up.railway.app/api/users';
+const baseURL = 'https://be-semarang-23-production.up.railway.app/api/users/:ReceiversName';
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const formTrack = document.getElementById("formTrack");
-  const output = document.getElementById("output");
-  const daftarEkspedisi = document.getElementById("daftarEkspedisi"); // Tambahkan elemen daftar ekspedisi di sini
+  const daftarEkspedisi = document.getElementById("daftarEkspedisi");
 
   formTrack.addEventListener("click", async () => {
     const ReceiversName = document.getElementById("ReceiversName").value;
@@ -27,10 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
         </p>
         <h1>Success</h1>`;
         
+        // Hapus semua elemen anak di dalam daftarEkspedisi sebelum menambahkan yang baru
+        while (daftarEkspedisi.firstChild) {
+          daftarEkspedisi.removeChild(daftarEkspedisi.firstChild);
+        }
+
         // Tambahkan informasi ekspedisi ke dalam daftar ekspedisi
         daftarEkspedisi.appendChild(ekspedisiItem);
-
-
       } else {
         console.error("Failed to retrieve data");
       }
