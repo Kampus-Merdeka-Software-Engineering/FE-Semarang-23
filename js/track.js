@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const daftarEkspedisi = document.getElementById("daftarEkspedisi"); // Tambahkan elemen daftar ekspedisi di sini
 
   formTrack.addEventListener("click", async () => {
-    const TrackingNumber = document.getElementById("TrackingNumber").value;
+    const ReceiversName = document.getElementById("ReceiversName").value;
 
     try {
-      const response = await fetch(baseURL + '/' + TrackingNumber, {
+      const response = await fetch(baseURL + '/' + ReceiversName, {
         method: "GET",
       });
 
