@@ -93,8 +93,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const ekspedisiData = await response.json();
         console.log("GET Request Result:", ekspedisiData);
 
-        // Tampilkan data ekspedisi di daftarEkspedisi (jika diperlukan)
-        // ...
       } else {
         console.error("Failed to fetch data");
       }
