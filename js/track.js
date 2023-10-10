@@ -18,12 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         const result = await response.json();
         daftarfromtracker.innerHTML = JSON.stringify(result);
-        daftarfromtracker.innerHTML = `<p>Receivers Name: ${result.ReceiversName}, <br /> 
-              Tracking Number: ${result.TrackingNumber}, <br />
-              Phone Number: ${result.PhoneNumber}, <br />
-              Package Weight: ${result.PackageWeight}, <br />
-              Service Option: ${result.ServiceOption} <br />
-          </p>`;
         daftarfromtracker.appendChild(formTrack);
         
       } else {
