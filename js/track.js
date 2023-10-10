@@ -29,13 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </p>
         <h1>Success</h1>`;
         daftarfromtracker.appendChild(ekspedisiItem);
-
-        // Hapus semua elemen anak di dalam daftarfromtracker sebelum menambahkan yang baru
-        while (daftarfromtracker.firstChild) {
-          daftarfromtracker.removeChild(daftarfromtracker.firstChild);
-        }
-
-        // Tambahkan informasi ekspedisi ke dalam daftar ekspedisi
       } else {
         console.error("Failed to retrieve data");
       }
@@ -45,3 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
   
   });
 });
+
+        // Hapus semua elemen anak di dalam daftarfromtracker sebelum menambahkan yang baru
+        // while (daftarfromtracker.firstChild) {
+        //   daftarfromtracker.removeChild(daftarfromtracker.firstChild);
+        // }
+
+      
