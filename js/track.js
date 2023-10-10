@@ -4,7 +4,6 @@ const baseURL = 'https://be-semarang-23-production.up.railway.app/api/users';
 document.addEventListener("DOMContentLoaded", function () {
   const formTrack = document.getElementById("formTrack");
   const daftarEkspedisi = document.getElementById("daftarEkspedisi");
-  const search = document.getElementById("search");
 
   const output = document.getElementById("output");
 
@@ -37,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Tambahkan informasi ekspedisi ke dalam daftar ekspedisi
-        search.reset();
       } else {
         console.error("Failed to retrieve data");
       }
