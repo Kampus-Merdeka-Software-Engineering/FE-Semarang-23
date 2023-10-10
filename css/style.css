@@ -554,7 +554,7 @@ body {
 
 .bgicontact {
   /* The image used */
-  background-image: url("/assets/img/contact/rates.png");
+  /* background-image: url("/assets/img/contact/rates.png"); */
 
   min-height: 380px;
 
