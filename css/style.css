@@ -737,7 +737,7 @@ select {
 
 #daftarfromtracker {
   width: 85%;
-  position: relative;
+  position: fixed;
   margin-top: 20px;
   border-radius: 5px;
   font-family: Montserrat;
