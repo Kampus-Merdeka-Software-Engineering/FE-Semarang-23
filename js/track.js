@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const formTrack = document.getElementById("formTrack");
   const daftarEkspedisi = document.getElementById("daftarEkspedisi");
 
-  // const output = document.getElementById("output");
+  const output = document.getElementById("output");
 
   formTrack.addEventListener("click", async () => {
     const ReceiversName = document.getElementById("ReceiversName").value;
