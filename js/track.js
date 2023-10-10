@@ -3,7 +3,7 @@ const baseURL = 'https://be-semarang-23-production.up.railway.app/api/users';
 
 document.addEventListener("DOMContentLoaded", function () {
   const formTrack = document.getElementById("formTrack");
-  const daftarEkspedisi = document.getElementById("daftarEkspedisi");
+  const daftarfromtracker = document.getElementById("daftarfromtracker");
 
   const output = document.getElementById("output");
 
@@ -28,11 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
           Service Option: ${result.ServiceOption} <br />
         </p>
         <h1>Success</h1>`;
-        daftarEkspedisi.appendChild(ekspedisiItem);
+        daftarfromtracker.appendChild(ekspedisiItem);
 
-        // Hapus semua elemen anak di dalam daftarEkspedisi sebelum menambahkan yang baru
-        while (daftarEkspedisi.firstChild) {
-          daftarEkspedisi.removeChild(daftarEkspedisi.firstChild);
+        // Hapus semua elemen anak di dalam daftarfromtracker sebelum menambahkan yang baru
+        while (daftarfromtracker.firstChild) {
+          daftarfromtracker.removeChild(daftarfromtracker.firstChild);
         }
 
         // Tambahkan informasi ekspedisi ke dalam daftar ekspedisi
