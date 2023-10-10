@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Tampilkan informasi ekspedisi yang berhasil diambil dari server
         const ekspedisiItem = document.createElement("div");
-        ekspedisiItem.innerHTML = `<p>Receivers Name: ${result.ReceiversName} <br /> 
-          Tracking Number: ${result.TrackingNumber} <br />
-          Phone Number: ${result.PhoneNumber} <br />
-          Package Weight: ${result.PackageWeight} <br />
+        ekspedisiItem.innerHTML = `<p>Receivers Name: ${result.ReceiversName}, <br /> 
+          Tracking Number: ${result.TrackingNumber}, <br />
+          Phone Number: ${result.PhoneNumber}, <br />
+          Package Weight: ${result.PackageWeight}, <br />
           Service Option: ${result.ServiceOption} <br />
         </p>
         <h1>Success</h1>`;
