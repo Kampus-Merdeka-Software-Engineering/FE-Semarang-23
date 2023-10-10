@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
           Service Option: ${result.ServiceOption} <br />
         </p>
         <h1>Success</h1>`;
+        daftarEkspedisi.appendChild(ekspedisiItem);
         
         // Hapus semua elemen anak di dalam daftarEkspedisi sebelum menambahkan yang baru
         while (daftarEkspedisi.firstChild) {
