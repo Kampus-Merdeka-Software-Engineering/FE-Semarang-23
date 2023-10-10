@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const formTrack = document.getElementById("formTrack");
   const daftarfromtracker = document.getElementById("daftarfromtracker");
 
-  const output = document.getElementById("output");
+  // const output = document.getElementById("output");
 
   formTrack.addEventListener("click", async () => {
     const ReceiversName = document.getElementById("ReceiversName").value;
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (response.ok) {
         const result = await response.json();
-        output.innerHTML = JSON.stringify(result);
+        daftarfromtracker.innerHTML = JSON.stringify(result);
 
         // Tampilkan informasi ekspedisi yang berhasil diambil dari server
         const ekspedisiItem = document.createElement("div");
