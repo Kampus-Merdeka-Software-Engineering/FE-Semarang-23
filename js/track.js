@@ -9,21 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   formTrack.addEventListener("click", async () => {
     const ReceiversName = document.getElementById("ReceiversName").value;
-    const TrackingNumber = document.getElementById("TrackingNumber").value;
-    const PhoneNumber = document.getElementById("PhoneNumber").value;
-    const PackageWeight = document.getElementById("PackageWeight").value;
-    const ServiceOption = document.getElementById("ServiceOption").value;
 
-    if (ReceiversName && TrackingNumber && PhoneNumber && PackageWeight && ServiceOption) {
     try {
-      const requestData = {
-        ReceiversName: ReceiversName,
-        TrackingNumber: TrackingNumber,
-        PhoneNumber: PhoneNumber,
-        PackageWeight: PackageWeight,
-        ServiceOption: ServiceOption
-      };
-      
       //take datanya
       const response = await fetch(baseURL + '/' + ReceiversName, {
         method: "GET",
@@ -57,6 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (error) {
       console.error("Error retrieving data:", error);
     }
-  }
+  
   });
 });
