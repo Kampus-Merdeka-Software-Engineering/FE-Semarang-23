@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (response.ok) {
         const result = await response.json();
-        output.innerHTML = JSON.stringify(requestData);
+        output.innerHTML = JSON.stringify(result);
 
         // Tampilkan informasi ekspedisi yang berhasil diambil dari server
         const ekspedisiItem = document.createElement("div");
