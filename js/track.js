@@ -22,8 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
               Phone Number: ${result.PhoneNumber}, <br />
               Package Weight: ${result.PackageWeight}, <br />
               Service Option: ${result.ServiceOption} <br />
-          </p>
-          <h1>Success</h1>`;
+          </p>`;
         daftarfromtracker.appendChild(formTrack);
         
       } else {
