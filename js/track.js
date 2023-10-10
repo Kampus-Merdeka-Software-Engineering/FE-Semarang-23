@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const output = document.getElementById("output");
 
-  search.addEventListener("click", async () => {
+  formTrack.addEventListener("click", async () => {
     const ReceiversName = document.getElementById("ReceiversName").value;
 
     try {
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Tambahkan informasi ekspedisi ke dalam daftar ekspedisi
-        formTrack.reset();
+        search.reset();
       } else {
         console.error("Failed to retrieve data");
       }
