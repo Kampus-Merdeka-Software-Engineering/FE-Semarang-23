@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (response.ok) {
         const result = await response.json();
         daftarfromtracker.innerHTML = JSON.stringify(result);
+        daftarfromtracker.appendChild(formTrack);
         
       } else {
         console.error("Failed to retrieve data");
